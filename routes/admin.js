@@ -4,11 +4,9 @@ const path = require('path');
 
 const products = [];
 router.get('/add-Item',(req,res, next)=>{
-    console.log("In Add Item Controller");
-   res.sendFile(path.join(__dirname,'../','views','add-Items.html'));
+    res.render('add-Items',{pageTitle:"Add Products"});
 })
 router.post('/add-Item',(req, res)=>{
-    console.log(req.body.title);
     products.push({title: req.body.title})
     res.redirect('/');
 })
