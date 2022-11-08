@@ -1,18 +1,19 @@
 const express = require('express');
 const router  = express.Router();
 const path = require('path');
+
+const products = [];
 router.get('/add-Item',(req,res, next)=>{
-    console.log("In another middleware");
-    //res.send('<form action ="/item" method="POST"><input type="text" name="message"><button type="submit">Enter</buttom></form>');
-   // res.send('<form action ="/admin/add-Item" method="POST"><input type="text" name="message"><button type="submit">Enter</buttom></form>');
+    console.log("In Add Item Controller");
    res.sendFile(path.join(__dirname,'../','views','add-Items.html'));
-
-   //---will send response here
-
 })
 router.post('/add-Item',(req, res)=>{
-    console.log(req.body);
+    console.log(req.body.title);
+    products.push({title: req.body.title})
     res.redirect('/');
 })
 
-module.exports = router;
+module.exports = {
+    router,
+    products
+};

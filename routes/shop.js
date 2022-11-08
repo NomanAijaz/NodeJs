@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
+const adminData = require('./admin');
+
 router.get('/',(req,res, next)=>{
-    console.log("In a main middleware");
-    //res.send('<h1>I am in Main</h2>')
-   // res.sendFile(path.join(__dirname,'../','views','shop.html'));
-   res.render('shop');
+    res.render('shop',{prods:adminData.products, docTitle:"Shop"});
 })
 
 module.exports = router;
