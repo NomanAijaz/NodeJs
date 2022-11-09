@@ -3,7 +3,13 @@ const router  = express.Router();
 
 const products = [];
 router.get('/add-Item',(req,res, next)=>{
-    res.render('add-Items',{pageTitle:"Add Products",path:"/admin/add-Item"});
+    res.render('add-Items',{
+        pageTitle:"Add Products",
+        path:"/admin/add-Item",
+        formCss:true,
+        productCss:true,
+        activeAddProduct:true,
+    });
 })
 router.post('/add-Item',(req, res)=>{
     products.push({title: req.body.title})
