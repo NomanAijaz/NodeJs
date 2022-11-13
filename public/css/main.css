@@ -101,6 +101,12 @@ main {
   cursor: pointer;
 }
 
+.link-btn{
+  text-decoration: none;
+  padding: 5px;
+
+}
+
 .btn:hover,
 .btn:active {
   background-color: #00695c;

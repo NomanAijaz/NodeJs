@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= pageTitle %></title>
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/forms.css">
     <link rel="stylesheet" href="/css/product.css">
 </head>
 
@@ -16,21 +15,14 @@
         <nav class="main-header__nav">
             <ul class="main-header__item-list">
                 <li class="main-header__item"><a href="/">Shop</a></li>
+                <li class="main-header__item"><a href="/products">Products</a></li>
+                <li class="main-header__item"><a href="/cart">Cart</a></li>
+                <li class="main-header__item"><a href="/order">Order</a></li>
                 <li class="main-header__item"><a href="/admin/add-Item">Add Product</a></li>
+                <li class="main-header__item"><a href="/admin/products">Admin Products</a></li>
             </ul>
         </nav>
     </header>
-
-    <main>
-        <form class="product-form" action="/admin/add-Item" method="POST">
-            <div class="form-control">
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title">
-            </div>
-
-            <button class="btn" type="submit">Add Product</button>
-        </form>
-    </main>
+    <h1>Edit Product</h1>
 </body>
-
 </html>

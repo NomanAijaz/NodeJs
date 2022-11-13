@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const Routes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
-const controller  = require('./controller/product');
+const controller  = require('./controller/shop');
 
 
 app.use(bodyParser.urlencoded({extended:false}));
@@ -20,7 +20,7 @@ app.use('/admin',Routes);
 
 app.use(shopRoutes);
 
-app.use(controller.errorPage);
+app.use(controller.errorPage);  
 
 
 app.listen(3000,()=>{
