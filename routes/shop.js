@@ -8,6 +8,7 @@ router.get('/cart', shopController.getUserCart);
 router.get('/check-out', shopController.getUserCheckout);
 router.get('/order', shopController.getOrders);
 router.get('/product-details', shopController.getProductDetails)
+router.get('/product/:productId', shopController.getSpecificProduct);
 
 
 

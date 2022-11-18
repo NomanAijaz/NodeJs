@@ -50,6 +50,16 @@ const errorPage = (req,res, next)=>{
     res.status(404).render('ErrorPage',{pageTitle:"Page Not Found"});
 };
 
+const getSpecificProduct  =  (req, res,  next)=>{
+    const {productId} = req.params;
+    Product.findById(productId,(product)=>{
+        res.render('shop/product-details',{
+            prods:product,
+            pageTitle:"Product Details",
+        });
+    });
+}
+
 module.exports = {
     gethomeScreen,
     getProducts,
@@ -58,4 +68,5 @@ module.exports = {
     getUserCheckout,
     getProductDetails,
     getOrders,
+    getSpecificProduct
 }

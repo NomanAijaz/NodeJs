@@ -20,6 +20,7 @@ class Product{
     }
     
      save()  {
+        this.id=Math.random().toString();
         getResults(products=>{   
         products.push(this);
         fs.writeFile(p, JSON.stringify(products),(err)=>console.log('Got error',err));
@@ -28,6 +29,12 @@ class Product{
 
     static fetchAll(cb)  {
         getResults(cb);        
+    }
+    static findById(id,cb)  {
+        getResults(products=>{
+            const product= products.find(p=>p.id===id);
+            cb(product)
+        });        
     }
 }
 
